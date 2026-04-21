@@ -2,59 +2,93 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Top Up Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>XinnStore - Top Up</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="topbar">
-    <a class="back-link" href="index.html">←</a>
-    <div class="logo3"><div class="icon">X</div><span>XinnStore</span></div>
-    <div style="width:42px"></div>
+  <header class="navbar">
+    <div class="logo-wrap">
+      <div class="logo-box">X</div>
+      <div class="logo-text">XinnStore</div>
+    </div>
+    <a class="login-btn" href="admin/login.html">Login</a>
   </header>
 
-  <main class="page">
-    <section class="game-hero">
-      <img id="gameBanner" src="assets/ff.jpg" alt="Banner Game">
-      <div class="game-hero-overlay"></div>
-      <div class="game-hero-title" id="gameTitle">Free Fire</div>
+  <main class="container">
+    <section class="hero-banner game-banner">
+      <img id="gameImage" src="assets/ml.jpg" alt="Game Banner">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title" id="gameTitle">Mobile Legends</h1>
+        <p class="hero-subtitle">Top up cepat, aman, dan otomatis.</p>
+      </div>
     </section>
 
-    <div class="card-panel">
-      <h3>Masukkan User ID</h3>
-      <input class="input" id="userId" placeholder="Masukkan ID">
-      <input class="input" id="zone" placeholder="Zone / Server (opsional)">
-    </div>
-
-    <div class="card-panel">
-      <h3>Pilih Nominal</h3>
-      <div class="diamond-grid" id="diamondGrid"></div>
-    </div>
-
-    <div class="card-panel">
-      <h3>Pilih Pembayaran</h3>
-      <div class="payment-list">
-        <button class="payment active" data-pay="DANA">DANA</button>
-        <button class="payment" data-pay="QRIS">QRIS</button>
-        <button class="payment" data-pay="GoPay">GoPay</button>
+    <section class="detail-box">
+      <h2 class="detail-title">Masukkan User ID</h2>
+      <div class="input-grid">
+        <input type="text" class="form-input" placeholder="Masukkan ID">
+        <input type="text" class="form-input" placeholder="Zone / Server (opsional)">
       </div>
-      <div class="pay-info">
-        <img src="assets/payment/dana.png" alt="Payment">
-        <div>
-          <strong id="payTitle">DANA</strong>
-          <p id="payValue">08xxxxxxxxxx</p>
+    </section>
+
+    <section class="detail-box">
+      <h2 class="detail-title">Pilih Nominal</h2>
+      <div class="nominal-grid">
+        <button class="nominal-card active" data-price="20000">
+          <span class="nominal-name">86 Diamonds</span>
+          <span class="nominal-price">Rp20.000</span>
+        </button>
+
+        <button class="nominal-card" data-price="39000">
+          <span class="nominal-name">172 Diamonds</span>
+          <span class="nominal-price">Rp39.000</span>
+        </button>
+
+        <button class="nominal-card" data-price="56000">
+          <span class="nominal-name">257 Diamonds</span>
+          <span class="nominal-price">Rp56.000</span>
+        </button>
+
+        <button class="nominal-card" data-price="75000">
+          <span class="nominal-name">344 Diamonds</span>
+          <span class="nominal-price">Rp75.000</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="detail-box">
+      <h2 class="detail-title">Pilih Pembayaran</h2>
+
+      <div class="payment-tabs">
+        <button class="pay-method active">DANA</button>
+        <button class="pay-method">QRIS</button>
+        <button class="pay-method">GoPay</button>
+      </div>
+
+      <div class="payment-preview">
+        <div class="payment-preview-inner">
+          <div class="payment-brand">DANA</div>
+          <div class="payment-store">XinnStore</div>
         </div>
       </div>
-      <input class="input" id="email" placeholder="Email untuk notifikasi">
-    </div>
+
+      <div class="payment-info">
+        <div class="payment-info-title">DANA</div>
+        <div class="payment-info-number">08xxxxxxxxxx</div>
+      </div>
+
+      <input type="email" class="form-input" placeholder="Email untuk notifikasi">
+    </section>
   </main>
 
   <div class="bottom-bar">
-    <div>
-      <p class="small-label">Total</p>
-      <h2 id="price">Rp0</h2>
+    <div class="bottom-price">
+      <span class="bottom-label">Total</span>
+      <strong id="totalPrice">Rp20.000</strong>
     </div>
-    <button class="btn" id="buyBtn">Bayar</button>
+    <button class="buy-btn">Bayar</button>
   </div>
 
   <script src="js/script.js"></script>
