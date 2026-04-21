@@ -4,10 +4,18 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  touch-action: pan-y;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background: #0b0b0b;
-  color: #fff;
+  background: #070707;
+  color: #ffffff;
 }
 
 a {
@@ -15,40 +23,46 @@ a {
   color: inherit;
 }
 
-.container {
-  max-width: 480px;
-  margin: auto;
-  padding: 14px;
+button,
+input {
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 16px;
-  background: #111;
   position: sticky;
   top: 0;
   z-index: 100;
+  height: 84px;
+  background: #0d0d0d;
+  border-bottom: 1px solid #181818;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
 }
 
 .logo-wrap {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .logo-box {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
   background: #f4b400;
   color: #111;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-size: 22px;
+  font-size: 24px;
+  font-weight: 900;
 }
 
 .logo-text {
@@ -59,21 +73,28 @@ a {
 .login-btn {
   background: #f4b400;
   color: #111;
-  border: none;
-  border-radius: 14px;
   padding: 12px 18px;
-  font-weight: 700;
+  border-radius: 16px;
+  font-weight: 800;
   font-size: 16px;
 }
 
-.hero-banner {
+.container {
   width: 100%;
-  height: 160px;
-  border-radius: 20px;
-  overflow: hidden;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 16px;
+  padding-bottom: 100px;
+}
+
+.hero-banner {
   position: relative;
-  margin-top: 12px;
-  margin-bottom: 16px;
+  width: 100%;
+  height: 180px;
+  border-radius: 22px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  background: #161616;
 }
 
 .hero-banner img {
@@ -82,10 +103,11 @@ a {
   object-fit: cover;
 }
 
-.hero-overlay {
+.hero-overlay,
+.card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.82), rgba(0,0,0,.15));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.08));
 }
 
 .hero-content {
@@ -98,41 +120,42 @@ a {
 
 .hero-badge {
   display: inline-block;
-  background: rgba(244,180,0,.18);
-  color: #f4b400;
-  border: 1px solid rgba(244,180,0,.45);
+  margin-bottom: 10px;
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-weight: 800;
+  color: #f4b400;
+  border: 1px solid rgba(244, 180, 0, 0.45);
+  background: rgba(244, 180, 0, 0.12);
 }
 
 .hero-title {
   font-size: 20px;
-  font-weight: 800;
-  line-height: 1.2;
+  font-weight: 900;
+  line-height: 1.15;
   margin-bottom: 6px;
 }
 
 .hero-subtitle {
-  font-size: 13px;
-  color: #ddd;
+  font-size: 14px;
+  color: #d8d8d8;
+}
+
+.tabs-wrap {
+  margin-bottom: 22px;
 }
 
 .tabs {
   display: flex;
-  gap: 24px;
-  margin-bottom: 8px;
-  margin-top: 8px;
-  font-weight: 700;
-  font-size: 16px;
+  gap: 28px;
+  margin-bottom: 10px;
 }
 
 .tab {
-  color: #d8d8d8;
-  position: relative;
-  cursor: pointer;
+  font-size: 16px;
+  font-weight: 800;
+  color: #e5e5e5;
 }
 
 .tab.active {
@@ -141,40 +164,41 @@ a {
 
 .tab-line {
   width: 100%;
-  height: 6px;
-  background: #e7e7e7;
+  height: 7px;
   border-radius: 999px;
+  background: #e6e6e6;
   overflow: hidden;
-  margin-bottom: 22px;
 }
 
 .tab-line-fill {
   width: 72%;
   height: 100%;
-  background: #f4b400;
   border-radius: 999px;
+  background: #f4b400;
+}
+
+.section {
+  margin-bottom: 26px;
 }
 
 .section-title {
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 900;
   margin-bottom: 14px;
-  margin-top: 14px;
 }
 
 .game-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
-  margin-bottom: 26px;
 }
 
 .game-card {
   position: relative;
-  height: 118px;
-  border-radius: 18px;
+  height: 126px;
+  border-radius: 20px;
   overflow: hidden;
-  background: #1b1b1b;
+  background: #141414;
 }
 
 .game-card img {
@@ -183,20 +207,14 @@ a {
   object-fit: cover;
 }
 
-.game-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.8), rgba(0,0,0,.1));
-}
-
 .game-name {
   position: absolute;
   left: 12px;
   bottom: 12px;
   z-index: 2;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
+  color: #ffffff;
 }
 
 .wallet-grid {
@@ -207,10 +225,10 @@ a {
 
 .wallet-card {
   position: relative;
-  height: 168px;
-  border-radius: 18px;
+  height: 160px;
+  border-radius: 20px;
   overflow: hidden;
-  background: #1b1b1b;
+  background: #141414;
 }
 
 .wallet-card img {
@@ -219,39 +237,228 @@ a {
   object-fit: cover;
 }
 
-.wallet-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.1));
-}
-
 .wallet-name {
   position: absolute;
   left: 12px;
   bottom: 12px;
   z-index: 2;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
+  color: #ffffff;
 }
 
 .floating-btn {
   position: fixed;
   right: 18px;
   bottom: 18px;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: #5865f2;
-  color: #fff;
+  width: 56px;
+  height: 56px;
   border: none;
+  border-radius: 50%;
+  background: #5d6df6;
+  color: #fff;
   font-size: 22px;
-  box-shadow: 0 10px 25px rgba(88, 101, 242, 0.35);
+  box-shadow: 0 10px 25px rgba(93, 109, 246, 0.35);
+}
+
+/* GAME PAGE */
+.game-banner {
+  height: 240px;
+}
+
+.detail-box {
+  background: #141414;
+  border: 1px solid #232323;
+  border-radius: 20px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.detail-title {
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.input-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.form-input {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  border-radius: 14px;
+  border: 1px solid #2d2d2d;
+  background: #1d1d1d;
+  color: #ffffff;
+  outline: none;
+  font-size: 15px;
+}
+
+.form-input::placeholder {
+  color: #9e9e9e;
+}
+
+.nominal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.nominal-card {
+  border: 1px solid #2c2c2c;
+  background: #1d1d1d;
+  color: #fff;
+  border-radius: 18px;
+  min-height: 90px;
+  padding: 14px;
+  text-align: left;
+}
+
+.nominal-card.active {
+  border-color: #f4b400;
+  box-shadow: 0 0 0 1px rgba(244, 180, 0, 0.25);
+}
+
+.nominal-name {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.nominal-price {
+  display: block;
+  font-size: 15px;
+  color: #f4b400;
+  font-weight: 900;
+}
+
+.payment-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.pay-method {
+  border: none;
+  background: #232323;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.pay-method.active {
+  background: #f4b400;
+  color: #111;
+}
+
+.payment-preview {
+  background: #1a1a1a;
+  border: 2px solid #f4b400;
+  border-radius: 28px;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.payment-preview-inner {
+  text-align: center;
+}
+
+.payment-brand {
+  font-size: 46px;
+  font-weight: 900;
+  color: #f4b400;
+  margin-bottom: 8px;
+}
+
+.payment-store {
+  font-size: 18px;
+  color: #d7d7d7;
+}
+
+.payment-info {
+  margin-bottom: 14px;
+}
+
+.payment-info-title {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.payment-info-number {
+  font-size: 18px;
+  color: #d7d7d7;
+}
+
+.bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 82px;
+  background: #0d0d0d;
+  border-top: 1px solid #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  z-index: 99;
+}
+
+.bottom-price {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bottom-label {
+  font-size: 13px;
+  color: #bdbdbd;
+}
+
+#totalPrice {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.buy-btn {
+  border: none;
+  background: #f4b400;
+  color: #111;
+  min-width: 120px;
+  height: 48px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 900;
 }
 
 @media (max-width: 480px) {
+  .navbar {
+    height: 80px;
+    padding: 0 16px;
+  }
+
+  .container {
+    padding: 14px;
+  }
+
   .hero-banner {
-    height: 150px;
+    height: 170px;
+  }
+
+  .game-banner {
+    height: 220px;
   }
 
   .wallet-card {
@@ -260,6 +467,5 @@ a {
 
   .tabs {
     gap: 18px;
-    font-size: 15px;
   }
-  }
+                         }
