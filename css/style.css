@@ -13,7 +13,7 @@ html, body {
 body {
   font-family: Arial, sans-serif;
   background: #070707;
-  color: #fff;
+  color: #ffffff;
 }
 
 /* NAVBAR */
@@ -62,18 +62,19 @@ body {
   font-weight: 700;
 }
 
-/* CONTAINER FULL */
+/* CONTAINER */
 .container {
   width: 100%;
   padding-bottom: 100px;
 }
 
-/* BANNER FULL */
+/* HERO */
 .hero-banner {
   width: 100%;
   height: 180px;
   position: relative;
   overflow: hidden;
+  margin-bottom: 16px;
 }
 
 .hero-banner img {
@@ -92,6 +93,7 @@ body {
   position: absolute;
   bottom: 16px;
   left: 16px;
+  right: 16px;
 }
 
 .hero-title {
@@ -104,17 +106,16 @@ body {
   color: #ccc;
 }
 
-/* TABS FULL */
+/* TABS */
 .tabs-wrap {
   width: 100%;
-  padding: 0;
 }
 
 .tabs {
   display: flex;
   gap: 20px;
   padding: 0 16px;
-  margin-top: 12px;
+  margin-bottom: 8px;
 }
 
 .tab {
@@ -143,6 +144,7 @@ body {
 /* SECTION */
 .section {
   width: 100%;
+  margin-bottom: 24px;
 }
 
 .section-title {
@@ -156,7 +158,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
-  padding: 0 16px 16px;
+  padding: 0 16px;
 }
 
 .game-card {
@@ -183,6 +185,7 @@ body {
   bottom: 10px;
   left: 10px;
   font-weight: 800;
+  font-size: 14px;
 }
 
 /* WALLET */
@@ -190,7 +193,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  padding: 0 16px 16px;
+  padding: 0 16px;
 }
 
 .wallet-card {
@@ -211,9 +214,10 @@ body {
   bottom: 10px;
   left: 10px;
   font-weight: 800;
+  font-size: 14px;
 }
 
-/* FLOAT BTN */
+/* FLOAT BUTTON */
 .floating-btn {
   position: fixed;
   right: 16px;
@@ -226,12 +230,28 @@ body {
   border: none;
 }
 
-/* GAME PAGE */
+/* ===== GAME PAGE ===== */
+
+.game-banner {
+  height: 220px;
+}
+
 .detail-box {
   margin: 16px;
-  background: #121212;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 18px;
   padding: 16px;
-  border-radius: 16px;
+}
+
+.detail-title {
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.input-grid {
+  display: grid;
+  gap: 10px;
 }
 
 .form-input {
@@ -241,7 +261,6 @@ body {
   background: #1c1c1c;
   border: 1px solid #333;
   color: #fff;
-  margin-bottom: 10px;
 }
 
 .nominal-grid {
@@ -252,21 +271,69 @@ body {
 
 .nominal-card {
   background: #1c1c1c;
+  border: 1px solid #333;
   padding: 12px;
   border-radius: 12px;
 }
 
-.nominal-price {
-  color: #f4b400;
+.nominal-card.active {
+  border: 1px solid #f4b400;
 }
 
-/* BOTTOM */
+.nominal-price {
+  color: #f4b400;
+  font-weight: 800;
+}
+
+/* PAYMENT */
+.payment-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.pay-method {
+  background: #232323;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+.pay-method.active {
+  background: #f4b400;
+  color: #111;
+}
+
+.payment-preview {
+  background: #1a1a1a;
+  border: 2px solid #f4b400;
+  border-radius: 20px;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.payment-brand {
+  font-size: 40px;
+  color: #f4b400;
+  font-weight: 900;
+}
+
+.payment-info {
+  margin-bottom: 10px;
+}
+
+/* BOTTOM BAR */
 .bottom-bar {
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 70px;
   background: #0d0d0d;
+  border-top: 1px solid #222;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -278,4 +345,5 @@ body {
   color: #111;
   padding: 10px 16px;
   border-radius: 12px;
-    }
+  font-weight: 800;
+}
