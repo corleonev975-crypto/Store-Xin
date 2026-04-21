@@ -2,105 +2,122 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>XinnStore</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-  <div class="navbar">
+  <header class="navbar">
     <div class="logo-wrap">
       <div class="logo-box">X</div>
       <div class="logo-text">XinnStore</div>
     </div>
     <a class="login-btn" href="admin/login.html">Login</a>
-  </div>
+  </header>
 
-  <div class="container">
-    <div class="hero-banner">
+  <main class="container">
+    <section class="hero-banner">
       <img src="assets/banner.jpg" alt="Banner XinnStore">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <div class="hero-badge">PROMO</div>
-        <div class="hero-title">Top Up Game Cepat & Aman</div>
-        <div class="hero-subtitle">Klik game favorit kamu lalu pilih nominal dan pembayaran.</div>
+        <span class="hero-badge">PROMO</span>
+        <h1 class="hero-title">Top Up Game Cepat & Aman</h1>
+        <p class="hero-subtitle">Klik game favorit kamu lalu pilih nominal dan pembayaran.</p>
       </div>
-    </div>
+    </section>
 
-    <div class="tabs">
-      <div class="tab active">Lagi Populer</div>
-      <div class="tab">Top Up</div>
-      <div class="tab">E-Wallet</div>
-    </div>
+    <section class="tabs-wrap">
+      <nav class="tabs">
+        <a class="tab active" href="#populer">Lagi Populer</a>
+        <a class="tab" href="#topup">Top Up</a>
+        <a class="tab" href="#ewallet">E-Wallet</a>
+      </nav>
+      <div class="tab-line">
+        <div class="tab-line-fill"></div>
+      </div>
+    </section>
 
-    <div class="tab-line">
-      <div class="tab-line-fill"></div>
-    </div>
+    <section class="section" id="populer">
+      <h2 class="section-title">Lagi Populer</h2>
+      <div class="game-grid">
+        <a class="game-card" href="game.html?game=free-fire">
+          <img src="assets/ff.jpg" alt="Free Fire">
+          <div class="card-overlay"></div>
+          <p class="game-name">Free Fire</p>
+        </a>
 
-    <div class="section-title" id="populer">Lagi Populer</div>
-    <div class="game-grid">
-      <a class="game-card" href="game.html?game=free-fire">
-        <img src="assets/ff.jpg" alt="Free Fire">
-        <div class="game-name">Free Fire</div>
-      </a>
+        <a class="game-card" href="game.html?game=mobile-legends">
+          <img src="assets/ml.jpg" alt="Mobile Legends">
+          <div class="card-overlay"></div>
+          <p class="game-name">Mobile Legends</p>
+        </a>
 
-      <a class="game-card" href="game.html?game=mobile-legends">
-        <img src="assets/ml.jpg" alt="Mobile Legends">
-        <div class="game-name">Mobile Legends</div>
-      </a>
+        <a class="game-card" href="game.html?game=roblox">
+          <img src="assets/roblox.jpg" alt="Roblox">
+          <div class="card-overlay"></div>
+          <p class="game-name">Roblox</p>
+        </a>
 
-      <a class="game-card" href="game.html?game=roblox">
-        <img src="assets/roblox.jpg" alt="Roblox">
-        <div class="game-name">Roblox</div>
-      </a>
+        <a class="game-card" href="game.html?game=free-fire-max">
+          <img src="assets/ff.jpg" alt="Free Fire MAX">
+          <div class="card-overlay"></div>
+          <p class="game-name">Free Fire MAX</p>
+        </a>
+      </div>
+    </section>
 
-      <a class="game-card" href="game.html?game=free-fire-max">
-        <img src="assets/ff.jpg" alt="Free Fire MAX">
-        <div class="game-name">Free Fire MAX</div>
-      </a>
-    </div>
+    <section class="section" id="topup">
+      <h2 class="section-title">Top Up</h2>
+      <div class="game-grid">
+        <a class="game-card" href="game.html?game=mobile-legends">
+          <img src="assets/ml.jpg" alt="Mobile Legends">
+          <div class="card-overlay"></div>
+          <p class="game-name">Mobile Legends</p>
+        </a>
 
-    <div class="section-title" id="topup">Top Up</div>
-    <div class="game-grid">
-      <a class="game-card" href="game.html?game=mobile-legends">
-        <img src="assets/ml.jpg" alt="Mobile Legends">
-        <div class="game-name">Mobile Legends</div>
-      </a>
+        <a class="game-card" href="game.html?game=free-fire">
+          <img src="assets/ff.jpg" alt="Free Fire">
+          <div class="card-overlay"></div>
+          <p class="game-name">Free Fire</p>
+        </a>
 
-      <a class="game-card" href="game.html?game=free-fire">
-        <img src="assets/ff.jpg" alt="Free Fire">
-        <div class="game-name">Free Fire</div>
-      </a>
+        <a class="game-card" href="game.html?game=roblox">
+          <img src="assets/roblox.jpg" alt="Roblox">
+          <div class="card-overlay"></div>
+          <p class="game-name">Roblox</p>
+        </a>
 
-      <a class="game-card" href="game.html?game=roblox">
-        <img src="assets/roblox.jpg" alt="Roblox">
-        <div class="game-name">Roblox</div>
-      </a>
+        <a class="game-card" href="game.html?game=free-fire-max">
+          <img src="assets/ff.jpg" alt="Free Fire MAX">
+          <div class="card-overlay"></div>
+          <p class="game-name">Free Fire MAX</p>
+        </a>
+      </div>
+    </section>
 
-      <a class="game-card" href="game.html?game=free-fire-max">
-        <img src="assets/ff.jpg" alt="Free Fire MAX">
-        <div class="game-name">Free Fire MAX</div>
-      </a>
-    </div>
+    <section class="section" id="ewallet">
+      <h2 class="section-title">E-Wallet</h2>
+      <div class="wallet-grid">
+        <a class="wallet-card" href="#">
+          <img src="assets/dana.jpg" alt="DANA">
+          <div class="card-overlay"></div>
+          <p class="wallet-name">DANA</p>
+        </a>
 
-    <div class="section-title" id="ewallet">E-Wallet</div>
-    <div class="wallet-grid">
-      <a class="wallet-card" href="#">
-        <img src="assets/dana.jpg" alt="DANA">
-        <div class="wallet-name">DANA</div>
-      </a>
+        <a class="wallet-card" href="#">
+          <img src="assets/gopay.jpg" alt="GoPay">
+          <div class="card-overlay"></div>
+          <p class="wallet-name">GoPay</p>
+        </a>
 
-      <a class="wallet-card" href="#">
-        <img src="assets/gopay.jpg" alt="GoPay">
-        <div class="wallet-name">GoPay</div>
-      </a>
-
-      <a class="wallet-card" href="#">
-        <img src="assets/ovo.jpg" alt="OVO">
-        <div class="wallet-name">OVO</div>
-      </a>
-    </div>
-  </div>
+        <a class="wallet-card" href="#">
+          <img src="assets/ovo.jpg" alt="OVO">
+          <div class="card-overlay"></div>
+          <p class="wallet-name">OVO</p>
+        </a>
+      </div>
+    </section>
+  </main>
 
   <button class="floating-btn">🧾</button>
 
