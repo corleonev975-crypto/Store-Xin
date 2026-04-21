@@ -1,11 +1,11 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   overflow-x: hidden;
 }
@@ -16,19 +16,34 @@ body {
   color: #ffffff;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
 /* NAVBAR */
 .navbar {
-  width: 100%;
   height: 80px;
+  width: 100%;
   background: #0d0d0d;
+  border-bottom: 1px solid #1b1b1b;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 0 16px;
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid #1a1a1a;
 }
 
 .logo-wrap {
@@ -38,15 +53,16 @@ body {
 }
 
 .logo-box {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
   background: #f4b400;
-  color: #111;
-  border-radius: 10px;
+  color: #111111;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 900;
+  font-size: 24px;
 }
 
 .logo-text {
@@ -56,294 +72,235 @@ body {
 
 .login-btn {
   background: #f4b400;
-  color: #111;
+  color: #111111;
   padding: 10px 16px;
   border-radius: 14px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
-/* CONTAINER */
-.container {
-  width: 100%;
-  padding-bottom: 100px;
+/* GAME PAGE */
+.game-page {
+  padding-bottom: 110px;
 }
 
-/* HERO */
-.hero-banner {
-  width: 100%;
-  height: 180px;
+.game-hero {
   position: relative;
+  width: 100%;
+  height: 210px;
   overflow: hidden;
-  margin-bottom: 16px;
 }
 
-.hero-banner img {
+.game-hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.hero-overlay {
+.game-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.1));
 }
 
-.hero-content {
+.game-hero-content {
   position: absolute;
+  left: 18px;
+  right: 18px;
   bottom: 16px;
-  left: 16px;
-  right: 16px;
+  z-index: 2;
 }
 
-.hero-title {
-  font-size: 20px;
+.game-hero-content h1 {
+  font-size: 22px;
   font-weight: 900;
+  margin-bottom: 4px;
 }
 
-.hero-subtitle {
+.game-hero-content p {
   font-size: 14px;
-  color: #ccc;
+  color: #dddddd;
 }
 
-/* TABS */
-.tabs-wrap {
-  width: 100%;
-}
-
-.tabs {
-  display: flex;
-  gap: 20px;
-  padding: 0 16px;
-  margin-bottom: 8px;
-}
-
-.tab {
-  font-weight: 700;
-  color: #ccc;
-}
-
-.tab.active {
-  color: #f4b400;
-}
-
-.tab-line {
-  width: 100%;
-  height: 6px;
-  background: #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.tab-line-fill {
-  width: 70%;
-  height: 100%;
-  background: #f4b400;
-}
-
-/* SECTION */
-.section {
-  width: 100%;
-  margin-bottom: 24px;
-}
-
-.section-title {
-  font-size: 20px;
-  font-weight: 900;
-  padding: 16px;
-}
-
-/* GRID GAME */
-.game-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  padding: 0 16px;
-}
-
-.game-card {
-  position: relative;
-  height: 120px;
-  border-radius: 18px;
-  overflow: hidden;
-}
-
-.game-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-}
-
-.game-name {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  font-weight: 800;
-  font-size: 14px;
-}
-
-/* WALLET */
-.wallet-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  padding: 0 16px;
-}
-
-.wallet-card {
-  position: relative;
-  height: 150px;
-  border-radius: 18px;
-  overflow: hidden;
-}
-
-.wallet-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.wallet-name {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  font-weight: 800;
-  font-size: 14px;
-}
-
-/* FLOAT BUTTON */
-.floating-btn {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  background: #5d6df6;
-  color: #fff;
-  border: none;
-}
-
-/* ===== GAME PAGE ===== */
-
-.game-banner {
-  height: 220px;
-}
-
-.detail-box {
+.panel {
+  background: #111111;
+  border: 1px solid #202020;
+  border-radius: 22px;
   margin: 16px;
-  background: #111;
-  border: 1px solid #222;
-  border-radius: 18px;
-  padding: 16px;
+  padding: 18px;
 }
 
-.detail-title {
+.panel h2 {
+  font-size: 18px;
   font-weight: 900;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
-.input-grid {
+.form-stack {
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
-.form-input {
+.input {
   width: 100%;
-  padding: 12px;
-  border-radius: 12px;
-  background: #1c1c1c;
-  border: 1px solid #333;
-  color: #fff;
+  height: 48px;
+  border-radius: 14px;
+  border: 1px solid #2a2a2a;
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 0 14px;
+  outline: none;
+}
+
+.input::placeholder {
+  color: #8f8f8f;
 }
 
 .nominal-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 
 .nominal-card {
-  background: #1c1c1c;
-  border: 1px solid #333;
+  background: #1a1a1a;
+  border: 1px solid #2c2c2c;
+  border-radius: 16px;
+  min-height: 74px;
   padding: 12px;
-  border-radius: 12px;
+  text-align: left;
+  color: #ffffff;
 }
 
 .nominal-card.active {
-  border: 1px solid #f4b400;
+  border-color: #f4b400;
+  box-shadow: 0 0 0 1px rgba(244, 180, 0, 0.2);
 }
 
-.nominal-price {
+.nominal-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #dddddd;
+}
+
+.nominal-value {
+  display: block;
+  font-size: 14px;
+  font-weight: 900;
   color: #f4b400;
-  font-weight: 800;
 }
 
-/* PAYMENT */
 .payment-tabs {
   display: flex;
   gap: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
 }
 
-.pay-method {
-  background: #232323;
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 10px;
+.pay-tab {
   border: none;
-}
-
-.pay-method.active {
-  background: #f4b400;
-  color: #111;
-}
-
-.payment-preview {
-  background: #1a1a1a;
-  border: 2px solid #f4b400;
-  border-radius: 20px;
-  min-height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.payment-brand {
-  font-size: 40px;
-  color: #f4b400;
-  font-weight: 900;
-}
-
-.payment-info {
-  margin-bottom: 10px;
-}
-
-/* BOTTOM BAR */
-.bottom-bar {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 70px;
-  background: #0d0d0d;
-  border-top: 1px solid #222;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 16px;
-}
-
-.buy-btn {
-  background: #f4b400;
-  color: #111;
-  padding: 10px 16px;
+  background: #232323;
+  color: #ffffff;
+  padding: 10px 14px;
   border-radius: 12px;
   font-weight: 800;
 }
+
+.pay-tab.active {
+  background: #f4b400;
+  color: #111111;
+}
+
+.payment-card {
+  width: 100%;
+  min-height: 220px;
+  border-radius: 24px;
+  border: 2px solid #f4b400;
+  background: linear-gradient(180deg, #1b1b1b 0%, #151515 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.payment-card-brand {
+  font-size: 42px;
+  font-weight: 900;
+  color: #f4b400;
+  margin-bottom: 8px;
+}
+
+.payment-card-store {
+  font-size: 18px;
+  color: #d8d8d8;
+}
+
+.payment-detail {
+  margin-bottom: 14px;
+}
+
+.payment-detail-title {
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.payment-detail-number {
+  font-size: 18px;
+  color: #d5d5d5;
+}
+
+.checkout-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 78px;
+  background: #0d0d0d;
+  border-top: 1px solid #1f1f1f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 101;
+}
+
+.checkout-total {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.checkout-total span {
+  font-size: 13px;
+  color: #bcbcbc;
+}
+
+.checkout-total strong {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.checkout-btn {
+  border: none;
+  background: #f4b400;
+  color: #111111;
+  min-width: 110px;
+  height: 46px;
+  border-radius: 16px;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+@media (max-width: 480px) {
+  .game-hero {
+    height: 200px;
+  }
+
+  .panel {
+    margin: 14px;
+    padding: 16px;
+  }
+    }
