@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   overflow-x: hidden;
 }
@@ -12,7 +13,7 @@ html, body {
 body {
   font-family: Arial, sans-serif;
   background: #070707;
-  color: #fff;
+  color: #ffffff;
 }
 
 a {
@@ -50,7 +51,7 @@ img {
   height: 42px;
   border-radius: 12px;
   background: #f4b400;
-  color: #111;
+  color: #111111;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,21 +66,20 @@ img {
 
 .login-btn {
   background: #f4b400;
-  color: #111;
+  color: #111111;
   padding: 10px 16px;
   border-radius: 14px;
   font-weight: 800;
 }
 
-.container {
-  width: 100%;
-  padding-bottom: 100px;
+.home-page {
+  padding-bottom: 90px;
 }
 
 .hero-banner {
+  position: relative;
   width: 100%;
   height: 180px;
-  position: relative;
   overflow: hidden;
   margin-bottom: 16px;
 }
@@ -93,7 +93,7 @@ img {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.8), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.08));
 }
 
 .hero-content {
@@ -112,8 +112,8 @@ img {
   font-size: 12px;
   font-weight: 800;
   color: #f4b400;
-  border: 1px solid rgba(244,180,0,.4);
-  background: rgba(244,180,0,.12);
+  border: 1px solid rgba(244, 180, 0, 0.4);
+  background: rgba(244, 180, 0, 0.12);
 }
 
 .hero-title {
@@ -124,11 +124,10 @@ img {
 
 .hero-subtitle {
   font-size: 14px;
-  color: #ddd;
+  color: #dddddd;
 }
 
 .tabs-wrap {
-  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -140,6 +139,7 @@ img {
 }
 
 .tab {
+  font-size: 16px;
   font-weight: 800;
   color: #d0d0d0;
 }
@@ -163,7 +163,6 @@ img {
 }
 
 .section {
-  width: 100%;
   margin-bottom: 24px;
 }
 
@@ -176,7 +175,7 @@ img {
 
 .game-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   padding: 0 16px;
 }
@@ -198,7 +197,7 @@ img {
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.8), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.08));
 }
 
 .game-name {
@@ -208,11 +207,12 @@ img {
   z-index: 2;
   font-size: 14px;
   font-weight: 800;
+  color: #ffffff;
 }
 
 .wallet-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   padding: 0 16px;
 }
@@ -238,6 +238,7 @@ img {
   z-index: 2;
   font-size: 14px;
   font-weight: 800;
+  color: #ffffff;
 }
 
 .floating-btn {
@@ -246,9 +247,19 @@ img {
   bottom: 16px;
   width: 56px;
   height: 56px;
-  border-radius: 50%;
   border: none;
+  border-radius: 50%;
   background: #5d6df6;
-  color: #fff;
+  color: #ffffff;
   font-size: 22px;
+}
+
+@media (max-width: 480px) {
+  .hero-banner {
+    height: 170px;
+  }
+
+  .wallet-card {
+    height: 140px;
+  }
   }
