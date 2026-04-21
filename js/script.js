@@ -44,10 +44,10 @@ nominalCards.forEach((card) => {
   });
 });
 
-const payMethods = document.querySelectorAll(".pay-method");
-payMethods.forEach((btn) => {
+const payTabs = document.querySelectorAll(".pay-tab");
+payTabs.forEach((btn) => {
   btn.addEventListener("click", () => {
-    payMethods.forEach((item) => item.classList.remove("active"));
+    payTabs.forEach((item) => item.classList.remove("active"));
     btn.classList.add("active");
   });
 });
