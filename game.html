@@ -2,9 +2,9 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>XinnStore - Top Up</title>
-  <link rel="stylesheet" href="css/style.css?v=2000" />
+  <link rel="stylesheet" href="css/style.css?v=3000" />
 </head>
 <body>
   <header class="navbar">
@@ -15,80 +15,78 @@
     <a class="login-btn" href="admin/login.html">Login</a>
   </header>
 
-  <main class="container">
-    <section class="hero-banner game-banner">
-      <img id="gameImage" src="assets/ml.jpg" alt="Mobile Legends">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <h1 class="hero-title" id="gameTitle">Mobile Legends</h1>
-        <p class="hero-subtitle">Top up cepat, aman, dan otomatis.</p>
+  <main class="game-page">
+    <section class="game-hero">
+      <img id="gameImage" src="assets/ml.jpg" alt="Mobile Legends" />
+      <div class="game-hero-overlay"></div>
+      <div class="game-hero-content">
+        <h1 id="gameTitle">Mobile Legends</h1>
+        <p>Top up cepat, aman, dan otomatis.</p>
       </div>
     </section>
 
-    <section class="detail-box">
-      <h2 class="detail-title">Masukkan User ID</h2>
-      <div class="input-grid">
-        <input type="text" class="form-input" placeholder="Masukkan ID">
-        <input type="text" class="form-input" placeholder="Zone / Server (opsional)">
+    <section class="panel">
+      <h2>Masukkan User ID</h2>
+      <div class="form-stack">
+        <input class="input" type="text" placeholder="Masukkan ID" />
+        <input class="input" type="text" placeholder="Zone / Server (opsional)" />
       </div>
     </section>
 
-    <section class="detail-box">
-      <h2 class="detail-title">Pilih Nominal</h2>
+    <section class="panel">
+      <h2>Pilih Nominal</h2>
       <div class="nominal-grid">
-        <button class="nominal-card active" data-price="20000" type="button">
-          <span class="nominal-name">86 Diamonds</span>
-          <span class="nominal-price">Rp20.000</span>
+        <button type="button" class="nominal-card active" data-price="20000">
+          <span class="nominal-label">86 Diamonds</span>
+          <span class="nominal-value">Rp20.000</span>
         </button>
 
-        <button class="nominal-card" data-price="39000" type="button">
-          <span class="nominal-name">172 Diamonds</span>
-          <span class="nominal-price">Rp39.000</span>
+        <button type="button" class="nominal-card" data-price="39000">
+          <span class="nominal-label">172 Diamonds</span>
+          <span class="nominal-value">Rp39.000</span>
         </button>
 
-        <button class="nominal-card" data-price="56000" type="button">
-          <span class="nominal-name">257 Diamonds</span>
-          <span class="nominal-price">Rp56.000</span>
+        <button type="button" class="nominal-card" data-price="56000">
+          <span class="nominal-label">257 Diamonds</span>
+          <span class="nominal-value">Rp56.000</span>
         </button>
 
-        <button class="nominal-card" data-price="75000" type="button">
-          <span class="nominal-name">344 Diamonds</span>
-          <span class="nominal-price">Rp75.000</span>
+        <button type="button" class="nominal-card" data-price="75000">
+          <span class="nominal-label">344 Diamonds</span>
+          <span class="nominal-value">Rp75.000</span>
         </button>
       </div>
     </section>
 
-    <section class="detail-box">
-      <h2 class="detail-title">Pilih Pembayaran</h2>
+    <section class="panel">
+      <h2>Pilih Pembayaran</h2>
 
       <div class="payment-tabs">
-        <button class="pay-method active" type="button">DANA</button>
-        <button class="pay-method" type="button">QRIS</button>
-        <button class="pay-method" type="button">GoPay</button>
+        <button type="button" class="pay-tab active">DANA</button>
+        <button type="button" class="pay-tab">QRIS</button>
+        <button type="button" class="pay-tab">GoPay</button>
       </div>
 
-      <div class="payment-preview">
-        <div class="payment-preview-inner">
-          <div class="payment-brand">DANA</div>
-          <div class="payment-store">XinnStore</div>
-        </div>
+      <div class="payment-card">
+        <div class="payment-card-brand">DANA</div>
+        <div class="payment-card-store">XinnStore</div>
       </div>
 
-      <div class="payment-info">
-        <div class="payment-info-title">DANA</div>
-        <div class="payment-info-number">08xxxxxxxxxx</div>
+      <div class="payment-detail">
+        <div class="payment-detail-title">DANA</div>
+        <div class="payment-detail-number">08xxxxxxxxxx</div>
       </div>
 
-      <input type="email" class="form-input" placeholder="Email untuk notifikasi">
+      <input class="input" type="email" placeholder="Email untuk notifikasi" />
     </section>
   </main>
 
-  <div class="bottom-bar">
-    <div class="bottom-price">
-      <span class="bottom-label">Total</span>
+  <div class="checkout-bar">
+    <div class="checkout-total">
+      <span>Total</span>
       <strong id="totalPrice">Rp20.000</strong>
     </div>
-    <button class="buy-btn" type="button">Bayar</button>
+    <button type="button" class="checkout-btn">Bayar</button>
   </div>
 
   <script src="js/script.js"></script>
