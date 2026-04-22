@@ -1,124 +1,62 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>XinnStore</title>
-  <link rel="stylesheet" href="css/home.css?v=10" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo-wrap">
-      <div class="logo-box">X</div>
-      <div class="logo-text">XinnStore</div>
-    </div>
-    <a class="login-btn" href="admin/login.html">Login</a>
-  </header>
 
-  <main class="home-page">
-    <section class="hero-banner">
-      <img src="assets/banner.jpg" alt="Banner XinnStore" />
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <span class="hero-badge">PROMO</span>
-        <h1 class="hero-title">Top Up Game Cepat & Aman</h1>
-        <p class="hero-subtitle">Klik game favorit kamu lalu pilih nominal dan pembayaran.</p>
-      </div>
-    </section>
+<header class="navbar">
+  <div class="logo">XinnStore</div>
+  <button class="login-btn" onclick="goLogin()">Login</button>
+</header>
 
-    <section class="tabs-wrap">
-      <nav class="tabs">
-        <a class="tab active" href="#populer">Lagi Populer</a>
-        <a class="tab" href="#topup">Top Up</a>
-        <a class="tab" href="#ewallet">E-Wallet</a>
-      </nav>
-      <div class="tab-line">
-        <div class="tab-line-fill"></div>
-      </div>
-    </section>
+<section class="hero">
+  <img src="assets/banner.jpg">
+  <div class="hero-text">
+    <h2>Top Up Game Cepat & Aman</h2>
+    <p>Klik game favorit kamu lalu pilih nominal</p>
+  </div>
+</section>
 
-    <section class="section" id="populer">
-      <h2 class="section-title">Lagi Populer</h2>
-      <div class="game-grid">
-        <a class="game-card" href="game.html?game=free-fire">
-          <img src="assets/ff.jpg" alt="Free Fire" />
-          <div class="card-overlay"></div>
-          <p class="game-name">Free Fire</p>
-        </a>
+<div class="tabs">
+  <a href="#populer">Lagi Populer</a>
+  <a href="#topup">Top Up</a>
+  <a href="#ewallet">E-Wallet</a>
+</div>
 
-        <a class="game-card" href="game.html?game=mobile-legends">
-          <img src="assets/ml.jpg" alt="Mobile Legends" />
-          <div class="card-overlay"></div>
-          <p class="game-name">Mobile Legends</p>
-        </a>
+<section id="populer">
+  <h3>Lagi Populer</h3>
+  <div class="grid">
+    <a href="game.html?game=free-fire"><img src="assets/ff.jpg"><p>Free Fire</p></a>
+    <a href="game.html?game=mobile-legends"><img src="assets/ml.jpg"><p>Mobile Legends</p></a>
+    <a href="game.html?game=roblox"><img src="assets/roblox.jpg"><p>Roblox</p></a>
+    <a href="game.html?game=free-fire"><img src="assets/ff.jpg"><p>Free Fire MAX</p></a>
+  </div>
+</section>
 
-        <a class="game-card" href="game.html?game=roblox">
-          <img src="assets/roblox.jpg" alt="Roblox" />
-          <div class="card-overlay"></div>
-          <p class="game-name">Roblox</p>
-        </a>
+<section id="topup">
+  <h3>Top Up</h3>
+  <div class="grid">
+    <a href="game.html?game=mobile-legends"><img src="assets/ml.jpg"><p>Mobile Legends</p></a>
+    <a href="game.html?game=free-fire"><img src="assets/ff.jpg"><p>Free Fire</p></a>
+    <a href="game.html?game=roblox"><img src="assets/roblox.jpg"><p>Roblox</p></a>
+  </div>
+</section>
 
-        <a class="game-card" href="game.html?game=free-fire-max">
-          <img src="assets/ff.jpg" alt="Free Fire MAX" />
-          <div class="card-overlay"></div>
-          <p class="game-name">Free Fire MAX</p>
-        </a>
-      </div>
-    </section>
+<section id="ewallet">
+  <h3>E-Wallet</h3>
+  <div class="grid">
+    <div><img src="assets/dana.jpg"><p>DANA</p></div>
+    <div><img src="assets/gopay.jpg"><p>GoPay</p></div>
+    <div><img src="assets/ovo.jpg"><p>OVO</p></div>
+  </div>
+</section>
 
-    <section class="section" id="topup">
-      <h2 class="section-title">Top Up</h2>
-      <div class="game-grid">
-        <a class="game-card" href="game.html?game=mobile-legends">
-          <img src="assets/ml.jpg" alt="Mobile Legends" />
-          <div class="card-overlay"></div>
-          <p class="game-name">Mobile Legends</p>
-        </a>
+<script src="js/script.js"></script>
+<script type="module" src="js/user.js"></script>
 
-        <a class="game-card" href="game.html?game=free-fire">
-          <img src="assets/ff.jpg" alt="Free Fire" />
-          <div class="card-overlay"></div>
-          <p class="game-name">Free Fire</p>
-        </a>
-
-        <a class="game-card" href="game.html?game=roblox">
-          <img src="assets/roblox.jpg" alt="Roblox" />
-          <div class="card-overlay"></div>
-          <p class="game-name">Roblox</p>
-        </a>
-
-        <a class="game-card" href="game.html?game=free-fire-max">
-          <img src="assets/ff.jpg" alt="Free Fire MAX" />
-          <div class="card-overlay"></div>
-          <p class="game-name">Free Fire MAX</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="section" id="ewallet">
-      <h2 class="section-title">E-Wallet</h2>
-      <div class="wallet-grid">
-        <a class="wallet-card" href="#">
-          <img src="assets/dana.jpg" alt="DANA" />
-          <div class="card-overlay"></div>
-          <p class="wallet-name">DANA</p>
-        </a>
-
-        <a class="wallet-card" href="#">
-          <img src="assets/gopay.jpg" alt="GoPay" />
-          <div class="card-overlay"></div>
-          <p class="wallet-name">GoPay</p>
-        </a>
-
-        <a class="wallet-card" href="#">
-          <img src="assets/ovo.jpg" alt="OVO" />
-          <div class="card-overlay"></div>
-          <p class="wallet-name">OVO</p>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <button class="floating-btn" type="button">🧾</button>
 </body>
 </html>
