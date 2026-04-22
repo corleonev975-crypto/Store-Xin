@@ -5,6 +5,7 @@ if (savedUser && loginBtn) {
   const user = JSON.parse(savedUser);
   loginBtn.textContent = user.name || "Akun Saya";
   loginBtn.href = "#";
+
   loginBtn.addEventListener("click", function (e) {
     e.preventDefault();
     const yes = confirm("Logout dari akun ini?");
