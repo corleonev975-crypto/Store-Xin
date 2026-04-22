@@ -27,7 +27,6 @@ window.loginGoogle = async function () {
 async function handleRedirectLogin() {
   try {
     const result = await getRedirectResult(auth);
-
     if (!result) return;
 
     const user = result.user;
