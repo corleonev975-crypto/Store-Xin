@@ -50,11 +50,18 @@ window.addEventListener("load", function () {
   const totalPrice = document.getElementById("totalPrice");
   const paySelected = document.getElementById("paySelected");
   const buyNowBtn = document.getElementById("buyNowBtn");
+  const emailNotif = document.getElementById("emailNotif");
 
   if (gameTitle) gameTitle.textContent = currentGame.title;
   if (gameDesc) gameDesc.textContent = currentGame.desc;
   if (gameBanner) gameBanner.src = currentGame.image;
   if (!nominalGrid) return;
+
+  const savedUser = localStorage.getItem("xinn_user");
+  if (savedUser && emailNotif) {
+    const user = JSON.parse(savedUser);
+    emailNotif.value = user.email || "";
+  }
 
   nominalGrid.innerHTML = "";
   let selectedPrice = 0;
@@ -94,7 +101,7 @@ window.addEventListener("load", function () {
     buyNowBtn.addEventListener("click", function () {
       const userId = document.getElementById("userId")?.value || "";
       const zoneId = document.getElementById("zoneId")?.value || "";
-      const emailNotif = document.getElementById("emailNotif")?.value || "";
+      const email = document.getElementById("emailNotif")?.value || "";
       const payment = document.querySelector(".pay-btn.active")?.dataset.pay || "DANA";
 
       if (!userId.trim()) {
@@ -103,13 +110,13 @@ window.addEventListener("load", function () {
       }
 
       alert(
-        "Order siap diproses:\\n" +
-        "Game: " + currentGame.title + "\\n" +
-        "User ID: " + userId + "\\n" +
-        "Zone: " + zoneId + "\\n" +
-        "Nominal: " + selectedNominal + "\\n" +
-        "Payment: " + payment + "\\n" +
-        "Email: " + emailNotif + "\\n" +
+        "Order siap diproses:\n" +
+        "Game: " + currentGame.title + "\n" +
+        "User ID: " + userId + "\n" +
+        "Zone: " + zoneId + "\n" +
+        "Nominal: " + selectedNominal + "\n" +
+        "Payment: " + payment + "\n" +
+        "Email: " + email + "\n" +
         "Total: " + formatRupiah(selectedPrice)
       );
     });
