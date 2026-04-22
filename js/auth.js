@@ -53,7 +53,6 @@ async function handleRedirectLogin() {
       { merge: true }
     );
 
-    alert("Login berhasil: " + (user.email || user.displayName));
     window.location.href = "../index.html";
   } catch (error) {
     console.error("redirect result error:", error);
