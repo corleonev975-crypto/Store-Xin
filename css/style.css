@@ -113,7 +113,6 @@ img{
   border-radius:999px;
 }
 
-/* game page */
 .game-hero{
   position:relative;
   border-radius:22px;
@@ -343,4 +342,4 @@ img{
   .bottom-price{
     font-size:20px;
   }
-            }
+    }
