@@ -2,305 +2,132 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html,
-body {
-  width: 100%;
-  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #070707;
-  color: #ffffff;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button,
-input {
-  font: inherit;
-}
-
-img {
-  display: block;
-  width: 100%;
+  background: #0b0b0b;
+  color: white;
 }
 
 /* NAVBAR */
 .navbar {
-  height: 80px;
-  width: 100%;
-  background: #0d0d0d;
-  border-bottom: 1px solid #1b1b1b;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.logo-wrap {
-  display: flex;
   align-items: center;
-  gap: 10px;
+  padding: 15px;
+  background: #111;
 }
 
-.logo-box {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  background: #f4b400;
-  color: #111111;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 24px;
-}
-
-.logo-text {
+.logo {
+  font-weight: bold;
   font-size: 18px;
-  font-weight: 800;
 }
 
 .login-btn {
-  background: #f4b400;
-  color: #111111;
-  padding: 10px 16px;
-  border-radius: 14px;
-  font-weight: 800;
+  background: gold;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-weight: bold;
 }
 
-/* GAME PAGE */
-.game-page {
-  padding-bottom: 110px;
-}
-
-.game-hero {
+/* HERO */
+.hero {
   position: relative;
+}
+
+.hero img {
   width: 100%;
-  height: 210px;
+  border-radius: 0 0 20px 20px;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+}
+
+.hero-text h2 {
+  font-size: 18px;
+}
+
+.hero-text p {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  gap: 20px;
+  padding: 10px 15px;
+  border-bottom: 2px solid #222;
+}
+
+.tabs a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.tabs a:hover {
+  color: gold;
+}
+
+/* SECTION */
+section {
+  padding: 15px;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* CARD */
+.grid a,
+.grid div {
+  position: relative;
+  border-radius: 15px;
   overflow: hidden;
 }
 
-.game-hero img {
+.grid img {
   width: 100%;
-  height: 100%;
+  height: 100px;
   object-fit: cover;
+  filter: brightness(0.7);
 }
 
-.game-hero-overlay {
+.grid p {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.1));
-}
-
-.game-hero-content {
-  position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 16px;
-  z-index: 2;
-}
-
-.game-hero-content h1 {
-  font-size: 22px;
-  font-weight: 900;
-  margin-bottom: 4px;
-}
-
-.game-hero-content p {
-  font-size: 14px;
-  color: #dddddd;
-}
-
-.panel {
-  background: #111111;
-  border: 1px solid #202020;
-  border-radius: 22px;
-  margin: 16px;
-  padding: 18px;
-}
-
-.panel h2 {
-  font-size: 18px;
-  font-weight: 900;
-  margin-bottom: 14px;
-}
-
-.form-stack {
-  display: grid;
-  gap: 12px;
-}
-
-.input {
-  width: 100%;
-  height: 48px;
-  border-radius: 14px;
-  border: 1px solid #2a2a2a;
-  background: #1a1a1a;
-  color: #ffffff;
-  padding: 0 14px;
-  outline: none;
-}
-
-.input::placeholder {
-  color: #8f8f8f;
-}
-
-.nominal-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-.nominal-card {
-  background: #1a1a1a;
-  border: 1px solid #2c2c2c;
-  border-radius: 16px;
-  min-height: 74px;
-  padding: 12px;
-  text-align: left;
-  color: #ffffff;
-}
-
-.nominal-card.active {
-  border-color: #f4b400;
-  box-shadow: 0 0 0 1px rgba(244, 180, 0, 0.2);
-}
-
-.nominal-label {
-  display: block;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: #dddddd;
-}
-
-.nominal-value {
-  display: block;
-  font-size: 14px;
-  font-weight: 900;
-  color: #f4b400;
-}
-
-.payment-tabs {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
-}
-
-.pay-tab {
-  border: none;
-  background: #232323;
-  color: #ffffff;
-  padding: 10px 14px;
-  border-radius: 12px;
-  font-weight: 800;
-}
-
-.pay-tab.active {
-  background: #f4b400;
-  color: #111111;
-}
-
-.payment-card {
-  width: 100%;
-  min-height: 220px;
-  border-radius: 24px;
-  border: 2px solid #f4b400;
-  background: linear-gradient(180deg, #1b1b1b 0%, #151515 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-
-.payment-card-brand {
-  font-size: 42px;
-  font-weight: 900;
-  color: #f4b400;
-  margin-bottom: 8px;
-}
-
-.payment-card-store {
-  font-size: 18px;
-  color: #d8d8d8;
-}
-
-.payment-detail {
-  margin-bottom: 14px;
-}
-
-.payment-detail-title {
-  font-size: 22px;
-  font-weight: 900;
-  margin-bottom: 6px;
-}
-
-.payment-detail-number {
-  font-size: 18px;
-  color: #d5d5d5;
-}
-
-.checkout-bar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 78px;
-  background: #0d0d0d;
-  border-top: 1px solid #1f1f1f;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-  z-index: 101;
-}
-
-.checkout-total {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.checkout-total span {
+  bottom: 8px;
+  left: 10px;
   font-size: 13px;
-  color: #bcbcbc;
+  font-weight: bold;
 }
 
-.checkout-total strong {
-  font-size: 18px;
-  font-weight: 900;
+/* HOVER EFFECT */
+.grid a:hover img {
+  transform: scale(1.05);
+  transition: 0.3s;
 }
 
-.checkout-btn {
-  border: none;
-  background: #f4b400;
-  color: #111111;
-  min-width: 110px;
-  height: 46px;
-  border-radius: 16px;
-  font-weight: 900;
-  font-size: 16px;
+/* E-WALLET COLOR */
+.grid div {
+  background: #1a1a1a;
 }
 
-@media (max-width: 480px) {
-  .game-hero {
-    height: 200px;
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
   }
-
-  .panel {
-    margin: 14px;
-    padding: 16px;
-  }
-  }
+}
