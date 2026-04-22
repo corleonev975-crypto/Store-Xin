@@ -38,7 +38,7 @@ function formatRupiah(value) {
   return "Rp" + value.toLocaleString("id-ID");
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", function () {
   const params = new URLSearchParams(window.location.search);
   const gameKey = params.get("game") || "mobile-legends";
   const currentGame = gameMap[gameKey] || gameMap["mobile-legends"];
@@ -50,44 +50,49 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalPrice = document.getElementById("totalPrice");
   const paySelected = document.getElementById("paySelected");
 
-  if (gameTitle) gameTitle.textContent = currentGame.title;
-  if (gameDesc) gameDesc.textContent = currentGame.desc;
-  if (gameBanner) gameBanner.src = currentGame.image;
-
-  let selectedPrice = 0;
-
-  if (nominalGrid) {
-    nominalGrid.innerHTML = "";
-
-    currentGame.nominals.forEach((item, index) => {
-      const btn = document.createElement("button");
-      btn.className = "nominal-btn" + (index === 0 ? " active" : "");
-      btn.innerHTML = `
-        ${item.name}
-        <span>${formatRupiah(item.price)}</span>
-      `;
-
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".nominal-btn").forEach(el => el.classList.remove("active"));
-        btn.classList.add("active");
-        selectedPrice = item.price;
-        if (totalPrice) totalPrice.textContent = formatRupiah(selectedPrice);
-      });
-
-      nominalGrid.appendChild(btn);
-
-      if (index === 0) {
-        selectedPrice = item.price;
-        if (totalPrice) totalPrice.textContent = formatRupiah(selectedPrice);
-      }
-    });
+  if (!nominalGrid) {
+    alert("nominalGrid tidak ditemukan");
+    return;
   }
 
-  document.querySelectorAll(".pay-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".pay-btn").forEach(el => el.classList.remove("active"));
+  gameTitle.textContent = currentGame.title;
+  gameDesc.textContent = currentGame.desc;
+  gameBanner.src = currentGame.image;
+
+  nominalGrid.innerHTML = "";
+  let selectedPrice = 0;
+
+  currentGame.nominals.forEach((item, index) => {
+    const btn = document.createElement("button");
+    btn.className = "nominal-btn" + (index === 0 ? " active" : "");
+    btn.innerHTML = item.name + "<span>" + formatRupiah(item.price) + "</span>";
+
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".nominal-btn").forEach((el) => {
+        el.classList.remove("active");
+      });
+
       btn.classList.add("active");
-      if (paySelected) paySelected.textContent = btn.dataset.pay;
+      selectedPrice = item.price;
+      totalPrice.textContent = formatRupiah(selectedPrice);
+    });
+
+    nominalGrid.appendChild(btn);
+
+    if (index === 0) {
+      selectedPrice = item.price;
+      totalPrice.textContent = formatRupiah(selectedPrice);
+    }
+  });
+
+  document.querySelectorAll(".pay-btn").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".pay-btn").forEach((el) => {
+        el.classList.remove("active");
+      });
+
+      btn.classList.add("active");
+      paySelected.textContent = btn.dataset.pay;
     });
   });
 });
