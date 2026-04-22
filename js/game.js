@@ -49,50 +49,69 @@ window.addEventListener("load", function () {
   const nominalGrid = document.getElementById("nominalGrid");
   const totalPrice = document.getElementById("totalPrice");
   const paySelected = document.getElementById("paySelected");
+  const buyNowBtn = document.getElementById("buyNowBtn");
 
-  if (!nominalGrid) {
-    alert("nominalGrid tidak ditemukan");
-    return;
-  }
-
-  gameTitle.textContent = currentGame.title;
-  gameDesc.textContent = currentGame.desc;
-  gameBanner.src = currentGame.image;
+  if (gameTitle) gameTitle.textContent = currentGame.title;
+  if (gameDesc) gameDesc.textContent = currentGame.desc;
+  if (gameBanner) gameBanner.src = currentGame.image;
+  if (!nominalGrid) return;
 
   nominalGrid.innerHTML = "";
   let selectedPrice = 0;
+  let selectedNominal = "";
 
   currentGame.nominals.forEach((item, index) => {
     const btn = document.createElement("button");
     btn.className = "nominal-btn" + (index === 0 ? " active" : "");
-    btn.innerHTML = item.name + "<span>" + formatRupiah(item.price) + "</span>";
+    btn.innerHTML = `${item.name}<span>${formatRupiah(item.price)}</span>`;
 
     btn.addEventListener("click", function () {
-      document.querySelectorAll(".nominal-btn").forEach((el) => {
-        el.classList.remove("active");
-      });
-
+      document.querySelectorAll(".nominal-btn").forEach((el) => el.classList.remove("active"));
       btn.classList.add("active");
       selectedPrice = item.price;
-      totalPrice.textContent = formatRupiah(selectedPrice);
+      selectedNominal = item.name;
+      if (totalPrice) totalPrice.textContent = formatRupiah(selectedPrice);
     });
 
     nominalGrid.appendChild(btn);
 
     if (index === 0) {
       selectedPrice = item.price;
-      totalPrice.textContent = formatRupiah(selectedPrice);
+      selectedNominal = item.name;
+      if (totalPrice) totalPrice.textContent = formatRupiah(selectedPrice);
     }
   });
 
   document.querySelectorAll(".pay-btn").forEach((btn) => {
     btn.addEventListener("click", function () {
-      document.querySelectorAll(".pay-btn").forEach((el) => {
-        el.classList.remove("active");
-      });
-
+      document.querySelectorAll(".pay-btn").forEach((el) => el.classList.remove("active"));
       btn.classList.add("active");
-      paySelected.textContent = btn.dataset.pay;
+      if (paySelected) paySelected.textContent = btn.dataset.pay;
     });
   });
+
+  if (buyNowBtn) {
+    buyNowBtn.addEventListener("click", function () {
+      const userId = document.getElementById("userId")?.value || "";
+      const zoneId = document.getElementById("zoneId")?.value || "";
+      const emailNotif = document.getElementById("emailNotif")?.value || "";
+      const payment = document.querySelector(".pay-btn.active")?.dataset.pay || "DANA";
+
+      if (!userId.trim()) {
+        alert("Masukkan User ID dulu");
+        return;
+      }
+
+      alert(
+        "Order siap diproses:\\n" +
+        "Game: " + currentGame.title + "\\n" +
+        "User ID: " + userId + "\\n" +
+        "Zone: " + zoneId + "\\n" +
+        "Nominal: " + selectedNominal + "\\n" +
+        "Payment: " + payment + "\\n" +
+        "Email: " + emailNotif + "\\n" +
+        "Total: " + formatRupiah(selectedPrice)
+      );
+    });
+  }
 });
