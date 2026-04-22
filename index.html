@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>XinnStore</title>
-  <link rel="stylesheet" href="css/style.css?v=900" />
-  <link rel="stylesheet" href="css/home.css?v=900" />
+  <link rel="stylesheet" href="css/style.css?v=3000" />
+  <link rel="stylesheet" href="css/home.css?v=3000" />
 </head>
 <body>
   <header class="navbar">
@@ -14,7 +14,7 @@
       <div class="logo-text">XinnStore</div>
     </div>
 
-    <a href="auth/login.html" class="login-btn" id="loginBtn">Login</a>
+    <button class="login-btn" id="loginBtn" type="button">Login</button>
   </header>
 
   <main class="container">
@@ -124,7 +124,32 @@
     </section>
   </main>
 
-  <script src="js/script.js?v=900"></script>
-  <script type="module" src="js/user.js?v=900"></script>
+  <!-- LOGIN MODAL -->
+  <div class="login-modal-overlay" id="loginModalOverlay">
+    <div class="login-modal">
+      <button class="login-close" id="closeLoginModal" type="button">×</button>
+
+      <div class="login-brand">XinnStore</div>
+      <h3 class="login-title">Welcome to XinnStore!</h3>
+
+      <div class="login-benefits">
+        <p>Login sekarang, biar bisa:</p>
+        <div class="login-pill">Tau info promo lebih dulu</div>
+        <div class="login-pill">Pantau & cek status transaksi</div>
+      </div>
+
+      <label class="login-agree">
+        <input type="checkbox" id="agreeTerms" />
+        <span>Dengan masuk ke XinnStore, saya menyetujui Syarat & Ketentuan serta Kebijakan Privasi</span>
+      </label>
+
+      <button class="google-login-btn" id="googleLoginBtn" type="button">
+        Masuk dengan Google
+      </button>
+    </div>
+  </div>
+
+  <script src="js/script.js?v=3000"></script>
+  <script type="module" src="js/user.js?v=3000"></script>
 </body>
-  </html>
+</html>
