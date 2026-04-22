@@ -8,7 +8,7 @@ const firebaseConfig = {
   projectId: "xinnstore-app",
   storageBucket: "xinnstore-app.firebasestorage.app",
   messagingSenderId: "506601909592",
-  appId: "1:506601909592:web:ba0aa0be4cd77a0e2b092d"
+  appId: "1:506601909592:web:17f1e4bf0742b2332b092d"
 };
 
 const app = initializeApp(firebaseConfig);
