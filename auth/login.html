@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login XinnStore</title>
+  <link rel="stylesheet" href="../css/style.css?v=20" />
 </head>
-<body style="background:#111;color:white;text-align:center;padding-top:100px;">
+<body>
+  <main class="container" style="padding-top: 60px;">
+    <section class="game-panel" style="max-width:420px; margin:0 auto;">
+      <h1 style="margin-bottom:10px;">Login User</h1>
+      <p class="game-desc" style="margin-bottom:20px;">Masuk dengan akun Google untuk melanjutkan transaksi.</p>
 
-<h2>Login XinnStore</h2>
+      <button class="buy-btn" style="width:100%;" onclick="loginGoogle()">
+        Login dengan Google
+      </button>
+    </section>
+  </main>
 
-<button onclick="loginGoogle()" 
-style="padding:12px 20px;border-radius:8px;background:#facc15;color:black;font-weight:bold;">
-  Login dengan Google
-</button>
-
-<script type="module" src="../js/auth.js"></script>
-
+  <script type="module" src="../js/auth.js"></script>
 </body>
 </html>
