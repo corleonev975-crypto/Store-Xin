@@ -2,9 +2,13 @@ import { GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstati
 import { doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import { auth, db } from "./firebase-config.js";
 
+console.log("auth.js loaded");
+
 const provider = new GoogleAuthProvider();
 
 window.loginGoogle = async function () {
+  console.log("loginGoogle clicked");
+
   try {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
@@ -32,8 +36,8 @@ window.loginGoogle = async function () {
 
     window.location.href = "../index.html";
   } catch (error) {
-    console.error(error);
-    alert("Login Google gagal");
+    console.error("Login error:", error);
+    alert("Login Google gagal: " + error.message);
   }
 };
 
