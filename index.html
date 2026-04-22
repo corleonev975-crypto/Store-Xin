@@ -4,31 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>XinnStore</title>
-
-  <link rel="stylesheet" href="css/style.css?v=99" />
-  <link rel="stylesheet" href="css/home.css?v=99" />
+  <link rel="stylesheet" href="css/style.css?v=500" />
+  <link rel="stylesheet" href="css/home.css?v=500" />
 </head>
 <body>
-
-  <!-- NAVBAR -->
   <header class="navbar">
     <div class="nav-left">
       <div class="logo-box">X</div>
       <div class="logo-text">XinnStore</div>
     </div>
 
-    <!-- LOGIN USER -->
     <a href="auth/login.html" class="login-btn" id="loginBtn">Login</a>
   </header>
 
-  <!-- MAIN -->
   <main class="container">
-
-    <!-- HERO -->
     <section class="hero">
-      <img src="assets/banner.jpg" class="hero-image" />
+      <img src="assets/banner.jpg" alt="Banner XinnStore" class="hero-image" />
       <div class="hero-overlay"></div>
-
       <div class="hero-content">
         <span class="hero-badge">PROMO</span>
         <h1>Top Up Game Cepat & Aman</h1>
@@ -36,93 +28,102 @@
       </div>
     </section>
 
-    <!-- TAB -->
     <section class="tab-section">
       <div class="tabs">
-        <a class="tab active">Lagi Populer</a>
-        <a class="tab">Top Up</a>
-        <a class="tab">E-Wallet</a>
+        <a class="tab active" href="#populer">Lagi Populer</a>
+        <a class="tab" href="#topup">Top Up</a>
+        <a class="tab" href="#ewallet">E-Wallet</a>
       </div>
       <div class="tab-progress">
         <div class="tab-progress-fill"></div>
       </div>
     </section>
 
-    <!-- POPULER -->
-    <section class="section">
-      <h2>Lagi Populer</h2>
+    <section class="section" id="populer">
+      <div class="section-header">
+        <h2>Lagi Populer</h2>
+      </div>
 
       <div class="home-grid home-grid-2">
-        <a href="game.html?game=free-fire" class="home-card">
-          <img src="assets/ff.jpg" />
+        <a class="home-card home-wide" href="game.html?game=free-fire">
+          <img src="assets/ff.jpg" alt="Free Fire" />
+          <div class="home-card-overlay"></div>
           <div class="home-card-label">Free Fire</div>
         </a>
 
-        <a href="game.html?game=mobile-legends" class="home-card">
-          <img src="assets/ml.jpg" />
+        <a class="home-card home-wide" href="game.html?game=mobile-legends">
+          <img src="assets/ml.jpg" alt="Mobile Legends" />
+          <div class="home-card-overlay"></div>
           <div class="home-card-label">Mobile Legends</div>
         </a>
 
-        <a href="game.html?game=roblox" class="home-card">
-          <img src="assets/roblox.jpg" />
+        <a class="home-card home-wide" href="game.html?game=roblox">
+          <img src="assets/roblox.jpg" alt="Roblox" />
+          <div class="home-card-overlay"></div>
           <div class="home-card-label">Roblox</div>
         </a>
 
-        <a href="game.html?game=free-fire" class="home-card">
-          <img src="assets/ff.jpg" />
+        <a class="home-card home-wide" href="game.html?game=free-fire">
+          <img src="assets/ff.jpg" alt="Free Fire MAX" />
+          <div class="home-card-overlay"></div>
           <div class="home-card-label">Free Fire MAX</div>
         </a>
       </div>
     </section>
 
-    <!-- TOPUP -->
-    <section class="section">
-      <h2>Top Up</h2>
+    <section class="section" id="topup">
+      <div class="section-header">
+        <h2>Top Up</h2>
+      </div>
 
       <div class="home-grid home-grid-3">
-        <a href="game.html?game=mobile-legends" class="home-card">
-          <img src="assets/ml.jpg" />
+        <a class="home-card home-tall" href="game.html?game=mobile-legends">
+          <img src="assets/ml.jpg" alt="Mobile Legends" />
+          <div class="home-card-overlay"></div>
           <div class="home-card-label">Mobile Legends</div>
         </a>
 
-        <a href="game.html?game=free-fire" class="home-card">
-          <img src="assets/ff.jpg" />
+        <a class="home-card home-tall" href="game.html?game=free-fire">
+          <img src="assets/ff.jpg" alt="Free Fire" />
+          <div class="home-card-overlay"></div>
           <div class="home-card-label">Free Fire</div>
         </a>
 
-        <a href="game.html?game=roblox" class="home-card">
-          <img src="assets/roblox.jpg" />
+        <a class="home-card home-tall" href="game.html?game=roblox">
+          <img src="assets/roblox.jpg" alt="Roblox" />
+          <div class="home-card-overlay"></div>
           <div class="home-card-label">Roblox</div>
         </a>
       </div>
     </section>
 
-    <!-- EWALLET -->
-    <section class="section">
-      <h2>E-Wallet</h2>
+    <section class="section" id="ewallet">
+      <div class="section-header">
+        <h2>E-Wallet</h2>
+      </div>
 
       <div class="home-grid home-grid-3">
-        <div class="home-card">
-          <img src="assets/dana.jpg" />
+        <div class="home-card home-tall">
+          <img src="assets/dana.jpg" alt="DANA" />
+          <div class="home-card-overlay"></div>
           <div class="home-card-label">DANA</div>
         </div>
 
-        <div class="home-card">
-          <img src="assets/gopay.jpg" />
+        <div class="home-card home-tall">
+          <img src="assets/gopay.jpg" alt="GoPay" />
+          <div class="home-card-overlay"></div>
           <div class="home-card-label">GoPay</div>
         </div>
 
-        <div class="home-card">
-          <img src="assets/ovo.jpg" />
+        <div class="home-card home-tall">
+          <img src="assets/ovo.jpg" alt="OVO" />
+          <div class="home-card-overlay"></div>
           <div class="home-card-label">OVO</div>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- SCRIPT -->
-  <script type="module" src="js/user.js?v=99"></script>
-
+  <script type="module" src="js/user.js?v=500"></script>
 </body>
 </html>
