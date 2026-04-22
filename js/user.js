@@ -1,8 +1,18 @@
-const user = JSON.parse(localStorage.getItem("user"));
+const savedUser = localStorage.getItem("xinn_user");
+const loginBtn = document.querySelector(".login-btn");
 
-if (user) {
-  const btn = document.querySelector(".login-btn");
-  if (btn) {
-    btn.innerText = user.displayName;
-  }
+if (savedUser && loginBtn) {
+  const user = JSON.parse(savedUser);
+
+  loginBtn.textContent = user.name || "Akun Saya";
+  loginBtn.onclick = function () {
+    const confirmLogout = confirm("Logout dari akun ini?");
+    if (confirmLogout) {
+      import("./auth.js").then((module) => {
+        if (window.logoutGoogle) {
+          window.logoutGoogle();
+        }
+      });
+    }
+  };
 }
