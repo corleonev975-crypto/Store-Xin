@@ -1,6 +1,5 @@
-import { GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
 import { auth, db } from "./firebase-config.js";
 
 const provider = new GoogleAuthProvider();
@@ -31,16 +30,20 @@ window.loginGoogle = async function () {
       { merge: true }
     );
 
-    alert("Login berhasil: " + user.displayName);
     window.location.href = "../index.html";
   } catch (error) {
-    console.error("Login error:", error);
+    console.error(error);
     alert("Login Google gagal");
   }
 };
 
-window.logoutUser = function () {
+window.logoutGoogle = async function () {
+  try {
+    await signOut(auth);
+  } catch (error) {
+    console.error(error);
+  }
+
   localStorage.removeItem("xinn_user");
-  alert("Logout berhasil");
   window.location.href = "../index.html";
 };
