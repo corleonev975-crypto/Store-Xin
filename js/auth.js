@@ -1,11 +1,8 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup } 
-from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-import { firebaseConfig } from "./firebase-config.js";
+import { auth, db } from "./firebase-config.js";
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 window.loginGoogle = async function () {
@@ -13,12 +10,37 @@ window.loginGoogle = async function () {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
 
-    localStorage.setItem("user", JSON.stringify(user));
+    const userData = {
+      uid: user.uid,
+      name: user.displayName || "",
+      email: user.email || "",
+      photo: user.photoURL || ""
+    };
+
+    localStorage.setItem("xinn_user", JSON.stringify(userData));
+
+    await setDoc(
+      doc(db, "users", user.uid),
+      {
+        uid: user.uid,
+        name: user.displayName || "",
+        email: user.email || "",
+        photo: user.photoURL || "",
+        updatedAt: serverTimestamp()
+      },
+      { merge: true }
+    );
 
     alert("Login berhasil: " + user.displayName);
-
     window.location.href = "../index.html";
-  } catch (err) {
-    alert("Login gagal");
+  } catch (error) {
+    console.error("Login error:", error);
+    alert("Login Google gagal");
   }
+};
+
+window.logoutUser = function () {
+  localStorage.removeItem("xinn_user");
+  alert("Logout berhasil");
+  window.location.href = "../index.html";
 };
